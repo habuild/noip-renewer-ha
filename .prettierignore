@@ -1,4 +1,6 @@
 ---
 .github/workflows/builder.yaml
 .github/workflows/app-ci.yaml
+.github/workflows/build-app.yaml
+.github/workflows/build.yaml
 *.png
