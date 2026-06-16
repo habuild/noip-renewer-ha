@@ -3,10 +3,12 @@
 ## hadolint ignore=DL3007
 ## Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
 
+# hadolint ignore=DL3006
 # Use base Home Assistant container
 ARG BUILD_FROM=ghcr.io/home-assistant/base:latest 
 FROM ${BUILD_FROM}
 
+# hadolint ignore=DL3007
 # Add Simoa's if he updates the renew.py or habuild renew.py docker container.
 FROM ghcr.io/habuild/noip-renewer:latest@sha256:1cf246d0198dc748ea75ade475407abb05029ab652509d060f71ec0029cb9a72 AS builder
 
