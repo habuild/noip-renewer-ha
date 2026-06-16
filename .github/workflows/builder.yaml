@@ -4,9 +4,9 @@
 name: Builder
 
 env:
-  BUILD_ARGS: 
+  BUILD_ARGS:
   MONITORED_FILES: "config.*"
-
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -14,12 +14,11 @@ on:
   release:
     types: [published]
 
-
 permissions:
   actions: write
   contents: write
   packages: write
-  security-events: write      
+  security-events: write
 
 jobs:
   init:
