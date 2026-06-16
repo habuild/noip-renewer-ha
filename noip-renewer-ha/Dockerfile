@@ -1,3 +1,8 @@
+## hadolint ignore=DL3006 
+## Always tag the version of an image explicitly
+## hadolint ignore=DL3007
+## Using latest is prone to errors if the image will ever update. Pin the version explicitly to a release tag
+
 # Use base Home Assistant container
 ARG BUILD_FROM=ghcr.io/home-assistant/base:latest 
 FROM ${BUILD_FROM}
