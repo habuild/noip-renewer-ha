@@ -1,6 +1,10 @@
 name: Build app
 
 on:
+  push:
+    branches:
+      - main
+    paths: ["config.*", "pushed", "pulled"]
   workflow_call:
     inputs:
       app:
