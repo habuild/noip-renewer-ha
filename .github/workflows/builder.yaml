@@ -1,11 +1,15 @@
 ---
 name: Build
 
+env:
+  MONITORED_FILES: "config.*"
 # yamllint disable-line rule:truthy
 on:
+  push:
+    branches:
+      - main
   release:
-    types:
-      - released
+    types: [published]
 
 env:
   ARCHITECTURES: '["amd64", "aarch64"]'
