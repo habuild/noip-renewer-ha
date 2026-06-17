@@ -6,13 +6,12 @@ on:
   push:
     branches:
       - main
-    paths: ["config.*","pushed"]
+    paths: ["config.*", "pushed"]
   release:
     types: [published]
 env:
   ARCHITECTURES: '["amd64", "aarch64"]'
   IMAGE_NAME: noip-renewer-ha
-
 
 permissions:
   contents: read
