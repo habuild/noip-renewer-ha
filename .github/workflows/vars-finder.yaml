@@ -6,7 +6,9 @@ on:
     branches:
       - main
     paths: ["vars"]
-
+    tags:
+      - '*'
+      
 env:
   BUILD_ARGS: |
           BUILD_REF 
