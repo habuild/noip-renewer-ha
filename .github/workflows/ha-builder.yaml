@@ -7,9 +7,7 @@ on:
   push:
     branches:
       - main
-    paths: ["pushed"]
-     #   release:
-     #   types: [published]
+    paths: ["pushed"]     ## release: types: [published] removed from next line
 
 env:
   BUILD_ARGS:
