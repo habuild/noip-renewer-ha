@@ -12,7 +12,6 @@ on:
     types: [published] 
 
 env:
-  BUILD_ARGS:
   IMAGE_NAME: ${{ github.event.repository.name }}
   ARCHITECTURES: '["amd64", "aarch64"]'
 
@@ -52,8 +51,8 @@ jobs:
       - name: Build image
         uses: home-assistant/builder/actions/build-image@2026.06.0
         with:
-          context: ./noip-renewer-ha
-          file: ./noip-renewer-ha/Dockerfile
+          context: ./.${{ github.workspace }}   ### repo folder
+          file: ./.${{ env.IMAGE_NAME }}/Dockerfile  ### App/Addon folder
           arch: ${{ matrix.arch }}
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
           image: ${{ matrix.image }}
