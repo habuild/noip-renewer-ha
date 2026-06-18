@@ -31,7 +31,7 @@ jobs:
 
       - name: Get changed files
         id: changed_files
-        uses: jitterbit/get-changed-files@v1
+        uses: HanseltimeIndustries/get-changed-files@v1.1.2   # uses: jitterbit/get-changed-files@v1 old deprec version
 
       - name: Find add-on directories
         id: addons
