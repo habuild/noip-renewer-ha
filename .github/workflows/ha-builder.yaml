@@ -8,8 +8,8 @@ on:
     branches:
       - main
     paths: ["pushed"]
- #   release:
- #   types: [published]
+     #   release:
+     #   types: [published]
 
 env:
   BUILD_ARGS:
