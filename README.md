@@ -60,8 +60,8 @@ actions:
   - action: hassio.app_start            ##### Action to start the container
     metadata: {}                        ##### This is provided by Supervisor Integration (Devices and Services).
     data:                               ##### May need to be enabled the first time.
-      app: 76aa2759_noip-renewer-ha    
- 
+      app: 76aa2759_noip-renewer-ha
+
 mode: single
 
 ```
@@ -98,7 +98,7 @@ actions:
   - metadata: {}
     data:
       message: >-
-        NOIP hostnames have been triggered. Check if completed successfully. 
+        NOIP hostnames have been triggered. Check if completed successfully.
 
 
         {% for packages, value in
@@ -111,7 +111,6 @@ mode: single
 ```
 
 <img width="671" height="382" alt="Supervisor Integration" src="https://github.com/user-attachments/assets/75775945-d777-467b-afb0-e150674a274b" />
-
 
 ---
 
