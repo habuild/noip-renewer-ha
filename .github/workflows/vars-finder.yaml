@@ -1,6 +1,7 @@
 ---
 name: vars-finder
 
+# yamllint disable-line rule:truthy
 on:
   push:
     branches:
@@ -8,7 +9,7 @@ on:
     paths: ["vars"]
     tags:
       - '*'
-      
+
 env:
   BUILD_ARGS: |
           BUILD_REF
@@ -27,15 +28,14 @@ jobs:
       - name: Display Vars via Github Context github.event.release.tag_name
         run: echo "The Var is ${{ github.event.release.tag_name }}"
 
-      - name: Display Vars via github.event.repository.name 
+      - name: Display Vars via github.event.repository.name
         run: echo "The var is ${{ github.event.repository.name }} "
 
-      - name: Display Vars via  steps.matrix.outputs.matrix 
+      - name: Display Vars via  steps.matrix.outputs.matrix
         run: echo "The var is ${{ steps.matrix.outputs.matrix }} "
 
       - name: Display Vars via  BUILD_REPOSITORY
-        run: echo "The var is ${{ github.workspace }} "  
+        run: echo "The var is ${{ github.workspace }} "
 
       - name: Display Vars via  env.IMAGE_NAME /Dockerfile
-        run: echo "The var is ./.${{ env.IMAGE_NAME }}/Dockerfile "  
-      
+        run: echo "The var is ./.${{ env.IMAGE_NAME }}/Dockerfile "
