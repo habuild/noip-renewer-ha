@@ -1,8 +1,10 @@
 ---
+./github/**
 .github/workflows/builder.yaml
 .github/workflows/app-ci.yaml
 .github/workflows/build-app.yaml
 .github/workflows/build.yaml
 .github/workflows/ha-app-ci.yaml
 .github/workflows/ha-builder.yaml
+.github/workflows/vars-finder.yaml
 *.png
