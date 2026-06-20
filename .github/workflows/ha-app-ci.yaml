@@ -69,7 +69,7 @@ jobs:
       - name: 🚀 Run App Lint
         uses: frenck/action-addon-linter@f995494fd84fae6310d23617e66d0e37de4f14eb   # v2.21.0
         with:
-          community: false
+          community: false   ### true requires Dev value in config.yaml Version key
           path: "./${{ needs.information.outputs.target }}"
 
   lint-hadolint:
