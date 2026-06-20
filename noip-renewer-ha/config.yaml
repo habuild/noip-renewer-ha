@@ -15,11 +15,13 @@ arch:
 panel_icon: mdi:certificate
 options:
   NO_IP_USERNAME: "!secret NOIP_Email"
+  SHOW_PASS: "False"
   NO_IP_PASSWORD: "!secret NOIP_Password"
   NO_IP_TOTP_KEY: "!secret NOIP_TOTP_KEY"
   TRANSLATE_ENABLED: "false"
 schema:
   NO_IP_USERNAME: "str?"
+  SHOW_PASS: bool
   NO_IP_PASSWORD: "str?"
   NO_IP_TOTP_KEY: "str?"
   TRANSLATE_ENABLED: "str?"
