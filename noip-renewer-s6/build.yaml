@@ -1,0 +1,3 @@
+---
+#  https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+FROM ghcr.io/home-assistant/base:latest
