@@ -6,6 +6,6 @@ build_from:
 
 ```
 ###  No longer needed 
-ARG BUILD_FROM=the image you want to use 
+ARG BUILD_FROM=the_image_you_want_to_use Creates the variable
 FROM ${BUILD_FROM}  ## from uses the variable
 ```
