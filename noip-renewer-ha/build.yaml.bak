@@ -7,5 +7,5 @@ build_from:
 ```
 ###  No longer needed 
 ARG BUILD_FROM=the image you want to use 
-FROM $BUILD_FROM  ## from uses the variable
+FROM ${BUILD_FROM}  ## from uses the variable
 ```
