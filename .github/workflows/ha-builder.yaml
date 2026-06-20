@@ -7,7 +7,7 @@ on:
   push:
     branches:
       - main
-    paths: ["pushed"]
+    paths: ["pushed", "noip-renewer-s6/pushed"]
   release:
     types: [published]
 
@@ -52,7 +52,7 @@ jobs:
         uses: home-assistant/builder/actions/build-image@2026.06.0
         with:
           context: ./noip-renewer-ha   ### repo folder
-          file: ./noip-renewer-ha/Dockerfile  ### App/Addon folder
+          file: ./noip-renewer-s6/Dockerfile  ### App/Addon folder
           arch: ${{ matrix.arch }}
           container-registry-password: ${{ secrets.GITHUB_TOKEN }}
           image: ${{ matrix.image }}
