@@ -11,19 +11,24 @@ on:
       - '*'
 
 env:
+  IMAGE_NAME: ${{ github.event.repository.name }}
   BUILD_ARGS: |
-          BUILD_REF
-          BUILD_ARCH
-          BUILD_NAME
-          BUILD_VERSION
-          BUILD_REPOSITORY
+          ARG BUILD_ARCH  
+          ARG BUILD_DATE
+          ARG BUILD_DESCRIPTION
+          ARG BUILD_NAME
+          ARG BUILD_REF
+          ARG BUILD_REPOSITORY
+          ARG BUILD_VERSION
+          ARG BUILD_FROM
+          
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Display Vars via Env Var
-        run: echo "The var is $GITHUB_REF_NAME"
+      - name: Display Vars via GITHUB_REF_NAME
+        run: echo "The var GITHUB_REF_NAME is $GITHUB_REF_NAME"
 
       - name: Display Vars via Github Context github.event.release.tag_name
         run: echo "The Var is ${{ github.event.release.tag_name }}"
@@ -31,11 +36,23 @@ jobs:
       - name: Display Vars via github.event.repository.name
         run: echo "The var is ${{ github.event.repository.name }} "
 
-      - name: Display Vars via  steps.matrix.outputs.matrix
-        run: echo "The var is ${{ steps.matrix.outputs.matrix }} "
+      - name: Display Vars via  BUILD_ARCH
+        run: echo "The var BUILD_ARCH is ${BUILD_ARCH} "
+
+      - name: Display Vars via  BUILD_DATE
+        run: echo "The var BUILD_DATE is ${BUILD_DATE} "
 
       - name: Display Vars via  BUILD_REPOSITORY
-        run: echo "The var is ${{ github.workspace }} "
+        run: echo "The var BUILD_REPOSITORY is ${BUILD_REPOSITORY} "
+
+      - name: Display Vars via BUILD_REF
+        run: echo "The var BUILD_REF is ${BUILD_REF} "  
+
+      - name: Display Vars via BUILD_VERSION
+        run: echo "The var BUILD_VERSION is ${BUILD_VERSION} "
+
+      - name: Display Vars via BUILD_FROM
+        run: echo "The var BUILD_FROM is ${BUILD_FROM} "
 
       - name: Display Vars via  env.IMAGE_NAME /Dockerfile
         run: echo "The var is ./.${{ env.IMAGE_NAME }}/Dockerfile "
