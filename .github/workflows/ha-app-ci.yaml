@@ -45,7 +45,7 @@ jobs:
         id: information
         uses: frenck/action-addon-information@ce1377e9851cf569c29329e65fb2c57e67ca0f69   # v1.4.2
         with:
-          path: "./noip-renewer-ha"
+          path: "./"
       - name: 🚀 Process possible slug override
         id: override
         env:
