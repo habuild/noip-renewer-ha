@@ -1,4 +1,4 @@
-# ![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fhabuild%2Fnoip-renewer-ha%2Fmain%2Fnoip-renewer-ha%2Fconfig.yaml)
+# ![Version](https://img.shields.io/badge/dynamic/yaml?label=Version&query=%24.version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fhabuild%2Fnoip-renewer-ha%2Fconfig.yaml)
 
 - Initial creation
 
