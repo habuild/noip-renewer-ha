@@ -5,8 +5,10 @@
 
 # hadolint ignore=DL3006
 # Use base Home Assistant container
-ARG BUILD_FROM=ghcr.io/home-assistant/base:latest 
-FROM ${BUILD_FROM}
+# ARG BUILD_FROM=ghcr.io/home-assistant/base:latest  #### still needed up a level?
+# FROM ${BUILD_FROM}
+
+FROM ghcr.io/home-assistant/base:latest
 
 # hadolint ignore=DL3007
 # Add Simoa's if he updates the renew.py or habuild renew.py docker container.
