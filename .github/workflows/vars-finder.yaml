@@ -22,13 +22,10 @@ env:
           ARG BUILD_VERSION
           ARG BUILD_FROM
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6   ### Enable variables?
-
       - name: Display Vars via GITHUB_REF_NAME
         run: echo The var GITHUB_REF_NAME is "$GITHUB_REF_NAME" switches between Main and version
 
