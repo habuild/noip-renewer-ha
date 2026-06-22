@@ -26,11 +26,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Extract variable
+      
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Extract Label from JSON
+        id: get_json_label
         run: |
-          CONTENT=$(curl -s https://raw.githubusercontent.com/habuild/hassio/main/haos-sbfspot/config.yaml)
-          conf_version=$(echo "$CONTENT" | jq -r '.version')
-          echo "CONFIG_VERSION=$conf_version" >> $GITHUB_ENV
+            # Uses jq (pre-installed on GitHub runners) to parse the JSON file
+            LABEL=$(jq -r '.version' config.json)
+            echo "label=$LABEL" >> "$GITHUB_OUTPUT"
+
+      - name: Use Extracted Label
+        run: |
+          echo "The extracted label is ${{ steps.get_json_label.outputs.label }}"
+
+      #- name: Extract variable
+       # run: |
+       #   CONTENT=$(curl -s https://raw.githubusercontent.com/habuild/hassio/main/haos-sbfspot/config.yaml)
+       #   conf_version=$(echo "$CONTENT" | jq -r '.version')
+       #   echo "CONFIG_VERSION=$conf_version" >> $GITHUB_ENV
       
       - name: Display Vars via GITHUB_ENV.CONFIG_VERSION
         run: echo The var GITHUB_ENV.CONFIG_VERSION is "$GITHUB_ENV.CONFIG_VERSION" switches between Main and version
