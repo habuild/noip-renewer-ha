@@ -33,8 +33,8 @@ jobs:
       - name: Extract Label from JSON
         id: get_json_label
         run: |
-            # Uses jq (pre-installed on GitHub runners) to parse the JSON file
-            LABEL=$(jq -r '.version' config.yaml)
+            # Uses yq (pre-installed on GitHub runners) to parse the yaml file
+            LABEL=$(yq -r '.version' config.yaml)
             echo "label=$LABEL" >> "$GITHUB_OUTPUT"
 
       - name: Use Extracted Label
