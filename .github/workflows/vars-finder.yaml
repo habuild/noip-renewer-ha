@@ -34,7 +34,7 @@ jobs:
         id: get_json_label
         run: |
             # Uses jq (pre-installed on GitHub runners) to parse the JSON file
-            LABEL=$(jq -r '.version' config.json)
+            LABEL=$(jq -r '.version' config.yaml)
             echo "label=$LABEL" >> "$GITHUB_OUTPUT"
 
       - name: Use Extracted Label
