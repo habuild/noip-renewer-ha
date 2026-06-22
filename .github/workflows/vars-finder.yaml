@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Extract variable
         run: |
-          CONTENT=$(curl -s https%3A%2F%2Fraw.githubusercontent.com%2Fhabuild%2Fhassio%2Fmain%2Fhaos-sbfspot%2Fconfig.yaml)
+          CONTENT=$(curl -s https://raw.githubusercontent.com/habuild/hassio/main/haos-sbfspot/config.yaml)
           conf_version=$(echo "$CONTENT" | jq -r '.version')
           echo "CONFIG_VERSION=$conf_version" >> $GITHUB_ENV
       
