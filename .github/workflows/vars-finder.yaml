@@ -26,6 +26,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Extract variable
+        run: |
+          CONTENT=$(curl -s https%3A%2F%2Fraw.githubusercontent.com%2Fhabuild%2Fhassio%2Fmain%2Fhaos-sbfspot%2Fconfig.yaml)
+          conf_version=$(echo "$CONTENT" | jq -r '.version')
+          echo "CONFIG_VERSION=$conf_version" >> $GITHUB_ENV
+      
+      - name: Display Vars via GITHUB_ENV.CONFIG_VERSION
+        run: echo The var GITHUB_ENV.CONFIG_VERSION is "$GITHUB_ENV.CONFIG_VERSION" switches between Main and version
+    
       - name: Display Vars via GITHUB_REF_NAME
         run: echo The var GITHUB_REF_NAME is "$GITHUB_REF_NAME" switches between Main and version
 
